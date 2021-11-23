@@ -35,7 +35,7 @@ aws s3 cp test.csv s3://dataeng-landing-zone-INITIALS/testdb/csvparquet/test.csv
 ###### Ensure you replace INITIALS below to reflect the name of the bucket you previously created
 
 ```
-aws s3 ls s3://dataeng-clean-zone-initials/testdb/csvparquet/
+aws s3 ls s3://dataeng-clean-zone-INITIALS/testdb/csvparquet/
 ```
   
 
