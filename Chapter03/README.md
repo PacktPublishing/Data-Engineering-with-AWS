@@ -15,24 +15,24 @@ In the ***hands-on activity*** section of this chapter, we configured an S3 buck
 
 #### Creating an IAM policy and role for your Lambda function
 - AWS Management Console - IAM Policies: https://console.aws.amazon.com/iamv2/home?#/policies
-- Policy JSON for `DataEngLambdaS3CWGluePolicy`: 
+- Policy JSON for `DataEngLambdaS3CWGluePolicy`: [DataEngLambdaS3CWGluePolicy](DataEngLambdaS3CWGluePolicy.json)  
+  [Ensure you replace INITIALS in the policy statements to reflect the name of the S3 buckets you created]
 
 #### Creating a Lambda function
 - AWS Management Console - Lambda Functions: https://console.aws.amazon.com/lambda/home#/functions
-- `CSVtoParquetLambda` function code:
+- `CSVtoParquetLambda` function code: [CSVtoParquetLambda.py](CSVtoParquetLambda.py)
 
 #### Configuring our Lambda function to be triggered by an S3 upload
-- Sample CSV file: 
-- Command to upload file to S3:   
+- Sample CSV file: [test.csv](test.csv)
 
-*Ensure you replace INITIALS below to reflect the name of the bucket you previously created*
+##### Command to upload file to S3:
+###### Ensure you replace INITIALS below to reflect the name of the bucket you previously created
 
 ```
 aws s3 cp test.csv s3://dataeng-landing-zone-INITIALS/testdb/csvparquet/test.csv
 ```
-- Command to list the newly created Parquet files in the clean-zone bucket: 
-
-*Ensure you replace INITIALS below to reflect the name of the bucket you previously created*
+##### Command to list the newly created Parquet files in the clean-zone bucket: 
+###### Ensure you replace INITIALS below to reflect the name of the bucket you previously created
 
 ```
 aws s3 ls s3://dataeng-clean-zone-initials/testdb/csvparquet/
