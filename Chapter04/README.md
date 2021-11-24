@@ -1,6 +1,2 @@
-# Conversational-AI-with-RASA
-Conversational AI with RASA, Published by Packt
+# Data-Engineering-with-AWS
 
-
-# Acknowledgements
-Google supported this work by providing Google Cloud credit
