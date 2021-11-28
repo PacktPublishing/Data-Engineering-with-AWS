@@ -1,4 +1,4 @@
-# Chapter 3
+# Chapter 3 - The AWS Data Engineers Toolkit
 In this chapter we reviewed a range of AWS services at a high level, including services for ingesting data from a variety of sources, services for transforming data, and services for consuming and working with data.
 
 ## Hands-on Activity
