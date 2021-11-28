@@ -28,8 +28,13 @@ Download the ***listings.csv*** file for Jersey City, New Jersey, and for New Yo
 **Commands to upload files to Amazon S3**  
 
 - Use the following commands to upload the data to your S3 Landing Zone bucket  
-`aws s3 cp jc-listings.csv s3://dataeng-landing-zone-INITIALS/listings/city=jersey_city/jc-listings.csv`  
-`aws s3 cp ny-listings.csv s3://dataeng-landing-zone-INITIALS/listings/city=new_york_city/ny-listings.csv`
+```
+aws s3 cp jc-listings.csv s3://dataeng-landing-zone-INITIALS/listings/city=jersey_city/jc-listings.csv
+```
+
+```
+aws s3 cp ny-listings.csv s3://dataeng-landing-zone-INITIALS/listings/city=new_york_city/ny-listings.csv
+```
 
 #### IAM Roles for Redshift
 
@@ -96,16 +101,22 @@ location 's3://dataeng-landing-zone-INITIALS/listings/city=new_york_city/'
 - Validate that the data has been loaded and defined correctly by running queries using both Redshift and Amazon Athena.
 
 **Redshift Query:**  
-`select * from spectrum_schema.listings limit 100;`
+```
+select * from spectrum_schema.listings limit 100;
+```
 
 **Amazon Athena Query:**  
-`select * from accommodation.listings limit 100;`
+```
+select * from accommodation.listings limit 100;
+```
 
 #### Creating a schema for a local Redshift table
 
 - Create new local (not external) Redshift schema
 
-`create schema if not exists accommodation_local;`
+```
+create schema if not exists accommodation_local;
+```
 
 - Create new local listings table
 
@@ -158,6 +169,68 @@ select name, location from touristspots
 ```
 WITH accommodation(listing_id, name, room_type, location) AS (SELECT listing_id, name, room_type, ST_Point(longitudes, latitude) from accommodation_local.listings)
 select listing_id, name, room_type, location from accommodation
+```
+
+**Query 3**
+```
+WITH touristspots_raw(name,lon,lat) AS (
+  (SELECT 'Freedom Tower', -74.013382,40.712742) UNION
+  (SELECT 'Empire State Building', -73.985428, 40.748817)
+),
+touristspots(name,location) AS (
+  SELECT name, ST_Point(lon, lat)
+  FROM touristspots_raw),
+accommodation(listing_id, name, room_type, price,
+location) AS
+(
+  SELECT listing_id, name, room_type, price,
+  ST_Point(longitudes, latitude)
+  FROM accommodation_local.listings)
+SELECT
+  touristspots.name as tourist_spot,
+  accommodation.listing_id as listing_id,
+  accommodation.name as location_name,
+  (ST_DistanceSphere(touristspots.location,
+  accommodation.location) / 1000)::decimal(10,2) AS
+  distance_in_km,
+  accommodation.price AS price,
+  accommodation.room_type as room_type
+  FROM touristspots, accommodation
+WHERE tourist_spot like 'Empire%'
+ORDER BY distance_in_km
+LIMIT 100;
+```
+
+**Query 4**
+```
+CREATE MATERIALIZED VIEW listings_touristspot_distance_view AS
+WITH touristspots_raw(name, lon, lat) AS (
+    (SELECT 'Freedom Tower', -74.013382,40.712742) UNION
+    (SELECT 'Empire State Building', -73.985428, 40.748817)
+),
+touristspots(name,location) AS (
+  SELECT name, ST_Point(lon, lat)
+  FROM touristspots_raw),
+accommodation(listing_id, name, room_type, price,location) AS
+(
+  SELECT listing_id, name, room_type, price, ST_Point(longitudes, latitude)
+  FROM accommodation_local.listings)
+SELECT
+    touristspots.name as tourist_spot,
+    accommodation.listing_id as listing_id,
+    accommodation.name as location_name,
+    (ST_DistanceSphere(touristspots.location,accommodation.location) / 1000)::decimal(10,2) AS distance_in_km,
+    accommodation.price AS price,
+    accommodation.room_type as room_type
+FROM touristspots, accommodation
+```
+
+**Query 5**
+```
+select * from listings_touristspot_distance_view
+where tourist_spot like 'Empire%' 
+order by distance_in_km
+limit 100
 ```
 
 
