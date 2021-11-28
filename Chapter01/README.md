@@ -1,4 +1,4 @@
-# Chapter 1
+# Chapter 1 - An Introduction to Data Engineering
 In this chapter we reviewed how data is becoming an increasingly important asset for organizations, and looked at some of the core challenges of working with big data. We then reviewed some of the data related roles that are commonly seen in organizations today. 
 
 ## Links
