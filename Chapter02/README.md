@@ -1,4 +1,4 @@
-# Chapter 2
+# Chapter 2 - Data Management Architectures for Analytics
 In this chapter, we learned about the foundational architectural concepts that are typically applied when designing real-life analytics data management and processing solutions. We also discussed three analytics data management architectures that you would find most commonly used across organizations today: data warehouse, data lake, and data lakehouse.
 
 ## Hands-on Activity
