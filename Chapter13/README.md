@@ -31,6 +31,21 @@ In the hands-on acitvity section of this chapter we looked at how we can use the
 
 - Amazon Management Console - Lambda: https://console.aws.amazon.com/lambda/
 
+- Lambda function code for calling Amazon Comprehend for sentiment analysis: [website-reviews-analysis-role.py](website-reviews-analysis-role.py)  
+  [Make sure to set region on Line 4 to the correct region that you are using for the hands-on activities in this book]
+
+#### Testing the solution with Amazon Comprehend
+
+- Example of a postivie review
+
+```
+I recently stayed at the Kensington Hotel in downtown Cape Town and was very
+impressed. The hotel is beautiful, the service from the staff is amazing, and the sea
+views cannot be beaten. If you have the time, stop by Mary's Kitchen, a coffee shop
+not far from the hotel, to get a coffee and try some of their delicious cakes and baked
+goods.
+```
+
 
 
 
