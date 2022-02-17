@@ -20,7 +20,8 @@ In the ***hands-on activity*** section of this chapter, we configured an S3 buck
 
 #### Creating a Lambda function
 - AWS Management Console - Lambda Functions: https://console.aws.amazon.com/lambda/home#/functions
-- `CSVtoParquetLambda` function code: [CSVtoParquetLambda.py](CSVtoParquetLambda.py)
+- `CSVtoParquetLambda` function code: [CSVtoParquetLambda.py](CSVtoParquetLambda.py)  
+ **Note:** Make sure you don't miss the step about increasing the Lambda function timeout to 1 minute (Step 10 on Page 93 of the printed book). If using a larger CSV file than the file provided here as a sample (test.csv) then consider also increasing the memory allocation. 
 
 #### Configuring our Lambda function to be triggered by an S3 upload
 - Sample CSV file: [test.csv](test.csv)
