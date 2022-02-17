@@ -27,16 +27,18 @@ In the ***hands-on activity*** section of this chapter, we configured an S3 buck
 - Sample CSV file: [test.csv](test.csv)
 
 ##### Command to upload file to S3:
+**Note:** In the original version of this exercise (as shown in the print edition of the book on Page 95), the path below was `dataeng-landing-zone-INITIALS/testdb/csvaprquet/test.csv`. However, in Chapter 4 when querying the database/table that gets created by this step, we refer to the database as `cleanzonedb`. The path of the upload determines the name of the database/table, which is why you should use `cleanzonedb` as shown below, rather than `testdb` as in the original version of this exercise. *Many thanks to the reader that noticed this and let us know about the mismatch!*
+
 ###### Ensure you replace INITIALS below to reflect the name of the bucket you previously created
 
 ```
-aws s3 cp test.csv s3://dataeng-landing-zone-INITIALS/testdb/csvparquet/test.csv
+aws s3 cp test.csv s3://dataeng-landing-zone-INITIALS/cleanzonedb/csvparquet/test.csv
 ```
 ##### Command to list the newly created Parquet files in the clean-zone bucket: 
 ###### Ensure you replace INITIALS below to reflect the name of the bucket you previously created
 
 ```
-aws s3 ls s3://dataeng-clean-zone-INITIALS/testdb/csvparquet/
+aws s3 ls s3://dataeng-clean-zone-INITIALS/cleanzonedb/csvparquet/
 ```
   
 
