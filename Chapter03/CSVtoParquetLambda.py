@@ -23,7 +23,7 @@ def lambda_handler(event, context):
     
     input_path = f"s3://{bucket}/{key}"
     print(f'Input_Path: {input_path}')
-    output_path = f"s3://dataeng-clean-zone-gse2/{db_name}/{table_name}"
+    output_path = f"s3://dataeng-clean-zone-INITIALS/{db_name}/{table_name}"
     print(f'Output_Path: {output_path}')
     
     input_df = wr.s3.read_csv([input_path])
