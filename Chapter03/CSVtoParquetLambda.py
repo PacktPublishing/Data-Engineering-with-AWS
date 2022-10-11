@@ -13,7 +13,7 @@ def lambda_handler(event, context):
     # then the following lines will set db to sakila and table_name to 'film'
     key_list = key.split("/")
     print(f'key_list: {key_list}')
-    db_name = key_list[len(key_list)-3]
+    db_name = 'cleanzonedb'
     table_name = key_list[len(key_list)-2]
     
     print(f'Bucket: {bucket}')
