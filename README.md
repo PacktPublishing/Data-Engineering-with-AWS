@@ -63,3 +63,7 @@ We also provide a PDF file that has color images of the screenshots/diagrams use
 **Note from the author:**
 
 You can use the resources provided in this GitHub repo as you work through the hands-on activities includes in each chapter of the book. This repo is laid out with resources matched to each chapter of the book - such as the JSON used to define IAM policies, sample files, relevant links, etc. 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781800560413">https://packt.link/free-ebook/9781800560413 </a> </p>
