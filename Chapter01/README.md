@@ -14,3 +14,4 @@ In this ***hands-on activity section*** of this chapter you were given step-by-s
 - What to do if you don’t receive a confirmation email within 24 hours: https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/
 - Best practices for securing your account - root user: https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html
 - Best practices for securing your account - Multi Factor Authentication (MFA): https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html
+-This is just a commint to test git
