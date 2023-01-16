@@ -44,3 +44,4 @@ In the ***hands-on activity*** section of this chapter, we created a new data la
 
 - AWS Management Console - Lake Formation: https://console.aws.amazon.com/lakeformation/home
 
+When asked to exclude the column 'Age', use 'fav_num' instead.
