@@ -2,7 +2,7 @@
 In this chapter we reviewed how data is becoming an increasingly important asset for organizations, and looked at some of the core challenges of working with big data. We then reviewed some of the data related roles that are commonly seen in organizations today. 
 
 ## Links
-- **AWS Data Lake Defition:** https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/
+- **AWS Data Lake Definition:** https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/
 
 ## Hands-on Activity
 
